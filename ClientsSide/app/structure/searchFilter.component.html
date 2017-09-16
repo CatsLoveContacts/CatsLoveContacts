@@ -1,0 +1,13 @@
+<!-- <div class="form-group has-feedback">   
+    <input #searchFilter type="text" class="form-control" placeholder="Search..." (input)="setSearch(searchFilter.value)">
+    <!-- <span class="form-control-feedback">
+        <i class="fa fa-search"></i>
+    </span> -->
+<!-- </div> -->
+<div class="input-group input-group-unstyled">
+    <input #searchFilter type="text" class="form-control" placeholder="Search..." (input)="setSearch(searchFilter.value)" />
+    <span class="input-group-addon text-white">
+        <i class="fa fa-search"></i>
+    </span>
+</div>
+<!-- custom: https://stackoverflow.com/questions/24682421/put-search-icon-near-textbox-using-bootstrap -->

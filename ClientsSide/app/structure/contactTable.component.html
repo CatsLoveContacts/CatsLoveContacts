@@ -1,0 +1,32 @@
+<navigation></navigation>
+<div class="mx-auto my-3" style="max-width: 900px;">
+    <table class="table table-striped mx-auto" style="max-width: 900px;">
+        <tr>
+            <th>Firstname</th>
+            <th>Surname</th>
+            <!-- <th>Birthday</th> -->
+            <th>E-Mail</th>
+            <!-- <th>Website</th> -->
+            <th>Phone</th>
+            <th>Company</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let contact of contacts">
+            <td>{{contact?.firstname}}</td>
+            <td>{{contact?.surname}}</td>
+            <!-- <td>{{contact?.birthday || 'None'}}</td> -->
+            <td>{{contact?.email || 'None'}}</td>
+            <!-- <td>{{contact?.website || 'None'}}</td> -->
+            <td>{{contact?.phone || 'None'}}</td>
+            <td>{{contact?.company?.name}}</td>
+            <!-- <td (click)="editContact(contact.id)">Edit</td> -->
+            <td [routerLink]="['/conedi']">Edit</td>
+            <!-- <td (click)="selectContact(contact.id)">Detail</td> -->
+            <td [routerLink]="['/condet', contact.id]">Detail</td>
+        </tr>
+    </table>
+    <div class="text-right mx-3 my-3">
+        <button class="btn cats-btn-dark" routerLink="/dashboard">Dashboard</button>
+    </div>
+</div>

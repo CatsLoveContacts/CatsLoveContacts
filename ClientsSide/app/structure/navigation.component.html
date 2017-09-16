@@ -1,0 +1,35 @@
+<nav class="navbar navbar-toggleable-sm cats-navbar-dark cats-bg-dark ">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand text-white" href="/">
+        <img src="/images/brand/logo_45.png" width="35" height="35" class="d-inline-block align-top" alt="logo">
+        Cats Love Contacts</a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle  disabled" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Profile
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/">Settings</a>
+                    <a class="dropdown-item" href="/">Login / Logout</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/dashboard']">Dasboard<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/contab']">Contacts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/comtab']">Companies</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <search-filter></search-filter>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,12 @@
+/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts
+--output-path=obj/Debug/netcoreapp2.0/
+--application-name=CatsLoveContacts
+--content-root=/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts
+--file=/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/Views/Home/About.cshtml
+--file=/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/Views/Home/Contact.cshtml
+--file=/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/Views/Home/Index.cshtml
+--file=/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/Views/Shared/Error.cshtml
+--file=/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/Views/Shared/_Layout.cshtml
+--file=/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/Views/Shared/_ValidationScriptsPartial.cshtml
+--file=/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/Views/_ViewImports.cshtml
+--file=/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/Views/_ViewStart.cshtml

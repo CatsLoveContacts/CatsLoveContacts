@@ -1,0 +1,12 @@
+/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/bin/Debug/netcoreapp2.0/libe_sqlite3.dylib
+/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/bin/Debug/netcoreapp2.0/CatsLoveContacts.deps.json
+/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/bin/Debug/netcoreapp2.0/CatsLoveContacts.runtimeconfig.json
+/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/bin/Debug/netcoreapp2.0/CatsLoveContacts.runtimeconfig.dev.json
+/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/bin/Debug/netcoreapp2.0/CatsLoveContacts.dll
+/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/bin/Debug/netcoreapp2.0/CatsLoveContacts.pdb
+/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/obj/Debug/netcoreapp2.0/CatsLoveContacts.csprojResolveAssemblyReference.cache
+/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/obj/Debug/netcoreapp2.0/CatsLoveContacts.csproj.CoreCompileInputs.cache
+/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/obj/Debug/netcoreapp2.0/CatsLoveContacts.AssemblyInfoInputs.cache
+/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/obj/Debug/netcoreapp2.0/CatsLoveContacts.AssemblyInfo.cs
+/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/obj/Debug/netcoreapp2.0/CatsLoveContacts.dll
+/Users/Matthias/Documents/Developer/dotnetessentials/CatsLoveContacts/obj/Debug/netcoreapp2.0/CatsLoveContacts.pdb

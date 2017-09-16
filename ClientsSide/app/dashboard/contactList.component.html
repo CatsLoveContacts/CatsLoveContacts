@@ -1,0 +1,39 @@
+<div *ngIf="contacts?.length > 0; else nodata" class="mx-3 my-3">
+    <div *ngFor="let contact of contacts" class="card cats-outline-cyan my-3">
+        <!-- <div class="card-header">{{contact?.firstname}} {{contact?.surname}}</div> -->
+        <div class="row">
+            <div class="col-9">
+                <div class="card-block">
+                    <h5 class="card-title">{{contact?.firstname}} {{contact?.surname}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{contact?.company?.name || 'No Data'}}</h6>
+                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                </div>
+            </div>
+            <div class="col-3" style="min-width: 64px;">
+                <!-- <img class="mx-auto d-block " src="/images/default/cat_64.png" alt="Card image cap"> -->
+                <img class=" cats-img-mrt pull-right" src="/images/default/cat_64.png" alt="Card image cap">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card-block">
+                    <!-- <h5 class="card-title">{{contact?.firstname}} {{contact?.surname}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{contact?.company?.name || 'No Data'}}</h6> -->
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a class="btn btn-default cats-color-dark" [routerLink]="['/conedi', contact.id]" aria-label="Settings">
+                <i class="fa fa-cog fa-lg" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-default cats-color-dark" [routerLink]="['/condet', contact.id]" aria-label="Address">
+                <i class="fa fa-address-card-o fa-lg" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<ng-template #nodata>
+    <h4 class="m-1">Waiting for data..</h4>
+</ng-template>
