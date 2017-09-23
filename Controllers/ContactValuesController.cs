@@ -4,9 +4,11 @@ using CatsLoveContacts.Models.BindingTargets;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CatsLoveContacts.Controllers
 {
+    // [Authorize(Roles = "User")]
     [Route("api/contacts")]
     public class ContactValuesController : Controller
     {
@@ -18,8 +20,6 @@ namespace CatsLoveContacts.Controllers
 
         [HttpGet("{id}")]
         public Contact GetContact(long id) {
-            // System.Threading.Thread.Sleep(5000);
-            // return context.Contacts.Find(id);
             Contact result = context.Contacts
                 .Include(p => p.Company)
                 .First(p => p.Id == id);

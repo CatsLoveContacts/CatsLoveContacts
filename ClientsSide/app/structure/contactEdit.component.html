@@ -1,0 +1,53 @@
+<navigation></navigation>
+<div class="container" *ngIf="contact != null">
+    <div class="card cats-outline-cyan my-3">
+        <div class="card-block mx-3">
+            <div class="form-group row has-danger">
+                <label class="col-form-label col-sm-2">Firstname</label>
+                <input class="form-control col-sm-10 form-control-danger" [(ngModel)]="contact.firstname" />
+            </div>
+            <div class="form-group row has-danger">
+                <label class="col-form-label col-sm-2">Surname</label>
+                <input class="form-control col-sm-10 form-control-danger" [(ngModel)]="contact.surname" />
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-2">E-Mail</label>
+                <input type="email" class="form-control col-sm-10" [(ngModel)]="contact.email" />
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-2">Website</label>
+                <input type="url" class="form-control col-sm-10" [(ngModel)]="contact.website" />
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-2">Phone</label>
+                <input class="form-control col-sm-10" [(ngModel)]="contact.phone" />
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-2">Birthday</label>
+                <input #valueBirthday type="date" class="form-control col-sm-10" value="{{contact.birthday | date: 'yyyy-MM-dd'}}"
+                (input)="setBirthday(valueBirthday.value)" />
+            </div>
+            <div *ngIf="companies?.length > 0" class="form-group row">
+                <label class="col-form-label col-sm-2">Company</label>
+                <!-- <input class="form-control col-sm-4" type="text" [(ngModel)]="contact.company.name" /> -->
+                <select class="form-control col-sm-4">
+                    <option>{{contact?.company?.name}}</option>
+                    <option *ngFor="let company of companies">{{company?.name}}</option>
+                </select>
+            </div>
+            <div *ngIf="companies?.length <= 0">
+                <label class="col-form-label col-sm-4">No Company found</label>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-2">Contact portrait</label>
+                <input type="file" class="form-control-file col-sm-4" aria-describedby="fileHelp" disabled>
+                <!-- <small id="fileHelp" class="form-text text-muted">Select an image</small> -->
+            </div>
+        </div>
+        <div class="card-footer text-right">
+            <button class="btn cats-btn-dark mx-1" (click)="saveContact(contact.id)">
+                Save
+            </button>
+        </div>
+    </div>
+</div>

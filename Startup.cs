@@ -46,7 +46,12 @@ namespace CatsLoveContacts
 			//	 options.UseSqlServer(Configuration.GetConnectionString("CatsLoveContacts"))
 			//);
 			services.AddDbContext<DataContext>(options =>
-				 options.UseSqlServer("Server=localhost,5100;Database=CatsLoveContacts;User Id=sa;Password=CatsLoveContacts247;MultipleActiveResultSets=true")
+                //local
+				//options.UseSqlServer("Server=localhost,5100;Database=CatsLoveContacts;User Id=sa;Password=CatsLoveContacts247;MultipleActiveResultSets=true")
+                //Azure
+                //options.UseSqlServer("Server=localhost,5100;Database=CatsLoveContacts;User Id=sa;Password=CatsLoveContacts247;MultipleActiveResultSets=true")
+                //appsettings.json ConnectionString
+                options.UseSqlServer(Configuration.GetConnectionString("CatsLoveContacts"))
 			);
             
         }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Repository } from "./models/repository";
 import { Contact } from "./models/contact.model";
 import { Company } from "./models/company.model";
+import { ErrorHandlerService } from "./errorHandler.service";
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,22 @@ import { Company } from "./models/company.model";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  private lastError: string[];
 
-  constructor(private repo: Repository) {
-
+  constructor(private repo: Repository, errorHandler: ErrorHandlerService) {
+    errorHandler.errors.subscribe(error => {
+      this.lastError = error;
+    });
   }
+
+  get error(): string[] {
+    return this.lastError;
+  }
+
+  clearError() {
+    this.lastError = null;
+  }
+
   get contact(): Contact {
     return this.repo.contact;
   }

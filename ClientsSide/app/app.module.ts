@@ -14,6 +14,15 @@ import { ContactDetailComponent } from "./structure/contactDetail.component";
 import { DashboardModule } from "./dashboard/dashboard.module";
 import { ContactSelectionComponent } from "./dashboard/contactSelection.component";
 
+import { ErrorHandler } from "@angular/core";
+import { ErrorHandlerService } from "./errorHandler.service";
+
+const eHandler = new ErrorHandlerService();
+
+export function handler() {
+  return eHandler;
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +38,10 @@ import { ContactSelectionComponent } from "./dashboard/contactSelection.componen
     RoutingConfig,
     DashboardModule
   ],
-  providers: [],
+  providers: [
+    { provide: ErrorHandlerService, useFactory: handler },
+    { provide: ErrorHandler, useFactory: handler }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

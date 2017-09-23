@@ -18,4 +18,10 @@ export class ContactTableComponent {
         this.repo.getContact(id);
         this.router.navigateByUrl("condet");
     }
+    clearContact() {
+        // this.repo.contact = new Contact(0);
+        // this.router.navigateByUrl("conedi/" + this.repo.contact.id);
+        this.repo.contact = new Contact();
+        this.router.navigateByUrl("conedi");
+    }
 }

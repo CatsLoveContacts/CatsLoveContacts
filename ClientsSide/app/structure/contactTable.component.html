@@ -1,32 +1,50 @@
 <navigation></navigation>
-<div class="mx-auto my-3" style="max-width: 900px;">
-    <table class="table table-striped mx-auto" style="max-width: 900px;">
-        <tr>
-            <th>Firstname</th>
-            <th>Surname</th>
-            <!-- <th>Birthday</th> -->
-            <th>E-Mail</th>
-            <!-- <th>Website</th> -->
-            <th>Phone</th>
-            <th>Company</th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr *ngFor="let contact of contacts">
-            <td>{{contact?.firstname}}</td>
-            <td>{{contact?.surname}}</td>
-            <!-- <td>{{contact?.birthday || 'None'}}</td> -->
-            <td>{{contact?.email || 'None'}}</td>
-            <!-- <td>{{contact?.website || 'None'}}</td> -->
-            <td>{{contact?.phone || 'None'}}</td>
-            <td>{{contact?.company?.name}}</td>
-            <!-- <td (click)="editContact(contact.id)">Edit</td> -->
-            <td [routerLink]="['/conedi']">Edit</td>
-            <!-- <td (click)="selectContact(contact.id)">Detail</td> -->
-            <td [routerLink]="['/condet', contact.id]">Detail</td>
-        </tr>
-    </table>
-    <div class="text-right mx-3 my-3">
-        <button class="btn cats-btn-dark" routerLink="/dashboard">Dashboard</button>
+<div class="container">
+    <div class="card cats-outline-cyan my-3">
+        <div class="card-block mx-3">
+            <table class="table mx-auto">
+                <tr>
+                    <th>Firstname</th>
+                    <th>Surname</th>
+                    <!-- <th>Birthday</th> -->
+                    <th class="hidden-sm-down">E-Mail</th>
+                    <!-- <th>Website</th> -->
+                    <th class="hidden-sm-down">Phone</th>
+                    <th class="hidden-sm-down">Company</th>
+                    <th class="hidden-sm-down"></th>
+                </tr>
+                <tr *ngFor="let contact of contacts">
+                    <td>{{contact?.firstname}}</td>
+                    <td>{{contact?.surname}}</td>
+                    <!-- <td>{{contact?.birthday || 'None'}}</td> -->
+                    <td class="hidden-sm-down">{{contact?.email || 'None'}}</td>
+                    <!-- <td>{{contact?.website || 'None'}}</td> -->
+                    <td class="hidden-sm-down">{{contact?.phone || 'None'}}</td>
+                    <td class="hidden-sm-down">{{contact?.company?.name}}</td>
+                    <!-- <td (click)="editContact(contact.id)">Edit</td> -->
+                    <!-- <td (click)="selectContact(contact.id)">Detail</td> -->
+                    <!-- <td [routerLink]="['/conedi']">Edit</td>
+                    <td [routerLink]="['/condet', contact.id]">Detail</td> -->
+                    <td class="pr-0">
+                        <div>
+                            <a class="btn btn-default" [routerLink]="['/conedi', contact.id]" aria-label="Delete">
+                                <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                            </a>
+                            <a class="btn btn-default cats-color-dark" [routerLink]="['/conedi', contact.id]" aria-label="Settings">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                            </a>
+                            <a class="btn btn-default cats-color-dark" [routerLink]="['/condet', contact.id]" aria-label="Address">
+                                <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                            </a>
+                    </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="card-footer text-right">
+            <a class="btn btn-success" (click)="clearContact()" aria-label="Address">
+                <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
+            </a>
+        </div>
     </div>
 </div>

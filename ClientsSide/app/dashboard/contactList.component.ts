@@ -21,4 +21,7 @@ export class ContactListComponent{
         this.repo.getContact(id);
         this.router.navigateByUrl("condet");
     }
+    deleteContact(id: number) {
+        this.repo.deleteContact(id);
+    }
 }

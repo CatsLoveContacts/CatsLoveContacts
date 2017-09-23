@@ -6,6 +6,9 @@ import { Http, RequestMethod, Request, Response } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
 
+import { ErrorHandlerService, ValidationError } from "../errorHandler.service";
+import "rxjs/add/operator/catch";
+
 const contactUrl = "/api/contacts";
 const companyUrl = "/api/companies";
 
@@ -117,12 +120,24 @@ export class Repository {
             .subscribe(response => this.getCompanies());
     }
 
-
     private sendRequest(verb: RequestMethod, url: string, data?: any): Observable<any> {
         return this.http.request(new Request({
             method: verb, url: url, body: data
         })).map(response => {
             return response.headers.get("Content-Lenth") != "0" ? response.json() : null;
+        }).catch((errorResponse: Response) => {
+            if (errorResponse.status == 400) {
+                let jsonData: string;
+                try {
+                    jsonData = errorResponse.json();
+                } catch (e) {
+                    throw new Error("Network Error");
+                }
+                let messages = Object.getOwnPropertyNames(jsonData)
+                    .map(p => jsonData[p]);
+                throw new ValidationError(messages);
+            }
+            throw new Error("Network Error");
         });
     }
 

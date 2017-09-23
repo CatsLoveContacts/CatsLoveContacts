@@ -8,6 +8,7 @@ import { ContactListComponent } from "../dashboard/contactList.component";
 import { ContactSelectionComponent } from "../dashboard/contactSelection.component";
 import { ContactTableComponent } from "../structure/contactTable.component";
 import { ContactDetailComponent } from "../structure/contactDetail.component";
+import { ContactEditComponent } from "../structure/contactEdit.component";
 import { SearchFilterComponent } from "../structure/searchFilter.component";
 import { NavigationComponent } from "../structure/navigation.component";
 
@@ -19,11 +20,13 @@ import { NavigationComponent } from "../structure/navigation.component";
     PaginationComponent,
     ContactTableComponent,
     ContactDetailComponent,
+    ContactEditComponent,
     NavigationComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [ContactSelectionComponent]
 })
